@@ -50,7 +50,7 @@ namespace Lab_6____OOP_Arv
         //Declaring the 'Dog' subclass of Animal
         class Dog : Animal
         {
-        //Declaring property 'Breed', which is unique to the Dog class
+        //Declaring the property 'Breed', which is unique to the Dog class
         public string Breed { get; set; }
             public Dog(double weight, int age, string breed)
                     :base("Dog", "Woof", "Dog food", weight, age)
