@@ -6,11 +6,12 @@ namespace Lab_6____OOP_Arv
     {
         static void Main(string[] args)
         {
-            //Creating 3 new objects of different classes
+            //Creating 4 new objects of different classes
 
             Dog myDog = new Dog(30, 6, "Labrador");
             Cat myCat = new Cat(5, 15, "Chestnut Brown");
             Chicken myChicken = new Chicken(3, 2, 40);
+            Eagle myEagle = new Eagle(7, 5, 230);
             
             //Using some of the shared and unique methods of each class
 
@@ -22,6 +23,9 @@ namespace Lab_6____OOP_Arv
 
             myChicken.layEgg();
             myChicken.makeSound();
+
+            myEagle.isFlying();
+            myEagle.makeSound();
         }
 
 
@@ -111,8 +115,8 @@ namespace Lab_6____OOP_Arv
                 WingSpanCm = wingSpan;
             }
 
-            //The unique subclass for the Bird class
-            public void isFlying()
+            //The unique method for the Bird class
+            public virtual void isFlying()
             {
                 Console.WriteLine($"The {Species} flaps its wings and flies away!");
             }
@@ -120,14 +124,21 @@ namespace Lab_6____OOP_Arv
 
 
         //A subclass of the Bird class
-        class Owl : Bird
+        class Eagle : Bird
         {
-            public Owl(double  weight, int age, double wingSpan)
+            public Eagle(double  weight, int age, double wingSpan)
                 :base(weight, age, wingSpan)                   
             {
-                //Changes the species and diet to something more fitting of an owl
-                Species = "Owl";
-                Diet = "Rodents";
+                //Changes the species, diet and sound to something more fitting of an eagle
+                Species = "Eagle";
+                Diet = "Meat";
+                Sound = "Keee-eee-eeeh";
+            }
+
+            //Overrides the original isFlying method
+            public override void isFlying()
+            {
+                Console.WriteLine($"The majestic {Species} is soaring gracefully above you!");
             }
         }
 
@@ -138,7 +149,7 @@ namespace Lab_6____OOP_Arv
             public Chicken(double weight, int age, double wingSpan)
                 : base(weight, age, wingSpan)
             {
-                //Changes the species and diet to something more fitting of a chicken
+                //Changes the species and sound to something more fitting of a chicken
                 Species = "Chicken";
                 Sound = "Cluck";
             }
