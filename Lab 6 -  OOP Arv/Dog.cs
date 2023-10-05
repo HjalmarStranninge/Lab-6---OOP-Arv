@@ -11,6 +11,7 @@ namespace Lab_6____OOP_Arv
     {
         //Declaring the property 'Breed', which is unique to the Dog class
         public string Breed { get; set; }
+        //The constructor for Dog. Some of the properties are set to a default, while others have to be set when creating a new instance
         public Dog(double weight, int age, string breed)
                 : base("Dog", "Woof", "Dog food", weight, age)
         {
